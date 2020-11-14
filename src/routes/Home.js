@@ -15,7 +15,7 @@ class Home extends React.Component{
         data: {movies}, //axios.get()의 결과를 저장할 변수
       },
     } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");//axios.get()의 실행을 기다려달라고 말해주는것
-    //console.log(movies)
+    console.log(movies)
     //this.setState({movies: movies})// 앞의 movies는 state, 뒤의 movies는 구조 분해 할당으로 얻은 영화 데이터가 있는 변수. 
     this.setState({movies, isLoading: false});//키와 대입할 변수의 값이 같으면 하나로 축약 가능.
     //위와 같이 하여 state의 movies: []에 영화 데이터 저장.
@@ -30,12 +30,27 @@ class Home extends React.Component{
     const {isLoading, movies} = this.state;
     return (
       <section className="container">
+      <div className="area" >
+        
+      </div >
         {isLoading ? (
           <div className = "loader">
-            <span className="loader__text">Loading...</span>
+            <span className="loader__text">
+              <div id = "cupcake" className = "box">
+                <h1 contenteditable spellcheck="false">Loading...</h1>
+              </div>
+            </span>
           </div>
         ) : (
           <div className="movies">
+            {/* <span>Theator</span> */}
+            {/* <h1 contenteditable spellcheck="false">theater open</h1> */}
+            <div class="container">
+              <div class="sign">
+                  <div class="neon-blue" id="title">Wel<span id="fade">come</span> To</div>
+                  <div class="neon-blue">  <span class="neon-purple" id="trav">Thea</span>  <span class="neon-purple">ter</span></div>
+              </div>
+            </div>
             {movies.map(movie => (
               <Movie 
                 key = {movie.id}
@@ -45,6 +60,10 @@ class Home extends React.Component{
                 summary = {movie.summary}
                 poster = {movie.medium_cover_image}
                 genres = {movie.genres}
+                description_full = {movie.description_full}
+                synopsis = {movie.synopsis}
+                rating = {movie.rating}
+                runtime = {movie.runtime}
               /> //여기서 Movie 컴포넌트 출력
             ))}
           </div>

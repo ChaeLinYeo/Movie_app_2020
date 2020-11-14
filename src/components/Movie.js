@@ -4,13 +4,23 @@ import './Movie.css'
 import {Link} from 'react-router-dom';
 
 //Movie 컴포넌트는 state가 필요하지 않으므로 클래스형 컴포넌트가 아닌 함수형 컴포넌트로 작성
-function Movie({title, year, summary, poster, genres}){
+function Movie({title, year, summary, poster, genres, description_full, synopsis, rating, runtime}){
   return (
     <div className="movie">
       <Link
         to={{
           pathname: '/movie-detail',
-          state: {year, title, summary, poster, genres},
+          state: {
+            year, 
+            title, 
+            summary, 
+            poster, 
+            genres, 
+            description_full, 
+            synopsis, 
+            rating, 
+            runtime
+          },
         }}
       >
         <img src={poster} alt={title} title={title}/>
@@ -35,6 +45,10 @@ Movie.propTypes = { //API에서 넘겨받아올 데이터들
   summary: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  description_full: PropTypes.string.isRequired,
+  synopsis: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  runtime: PropTypes.number.isRequired,
 };
 
 export default Movie;

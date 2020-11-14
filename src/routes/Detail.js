@@ -11,8 +11,30 @@ class Detail extends React.Component{
 
     render(){
         const {location}=this.props;
+        console.log(location)
         if (location.state){
-            return <span>{location.state.title}</span>;
+            return (
+            <span>
+                <center>
+                <img className="poster" src={location.state.poster}/>
+                </center>
+                <span>
+                    <h1>{location.state.title} ({location.state.year})</h1>
+                    Rating : {location.state.rating}/10
+                    <br></br>
+                    Runtime : {location.state.runtime}
+                    <h3>Genre</h3>
+                    {location.state.genres.map((genre, index) => {
+                        return <li key={index} className="movie__genre">{genre}</li>;
+                    })}
+                    <h3>Description</h3>
+                    {location.state.summary}
+                    {location.state.description_full}
+                    <h3>Synopsis</h3>
+                    {location.state.synopsis}
+                </span>
+            </span>
+            );
         }else{
             return null;
         }
