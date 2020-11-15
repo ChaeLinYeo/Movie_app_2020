@@ -47,6 +47,7 @@ html,body{
     padding:0px;
     /* background-color:#FFD454; */
     background: #313131;
+    font-size: 15px;
     justify-content: center;
     align-items: center;
     /* background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF); */
@@ -66,7 +67,7 @@ html,body{
 
 :root {
   /* Base font size */
-  font-size: 10px;   
+  font-size: 7px;   
   margin-top:100px;
   /* Set neon color */
   --neon-text-color: #f40;
@@ -81,7 +82,7 @@ h1 {
   padding: 4rem 6rem 5.5rem;
   border: 0.4rem solid #fff;
   border-radius: 2rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   animation: flicker 1.5s infinite alternate;     
 }
 
@@ -153,7 +154,7 @@ h1:focus {
   transform: rotate(-3deg);
 }
 #title {
-  font-size: 110px;
+  font-size: 90px;
 }
 #trav {
   -webkit-animation: blink 0.01s infinite alternate;
@@ -272,3 +273,17 @@ h1:focus {
     opacity: 0.8;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

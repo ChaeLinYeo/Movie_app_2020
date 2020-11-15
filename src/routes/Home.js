@@ -37,7 +37,7 @@ class Home extends React.Component{
           <div className = "loader">
             <span className="loader__text">
               <div id = "cupcake" className = "box">
-                <h1 contenteditable spellcheck="false">Loading...</h1>
+                <h1 contentEditable spellCheck="false">Loading...</h1>
               </div>
             </span>
           </div>
@@ -45,10 +45,10 @@ class Home extends React.Component{
           <div className="movies">
             {/* <span>Theator</span> */}
             {/* <h1 contenteditable spellcheck="false">theater open</h1> */}
-            <div class="container">
-              <div class="sign">
-                  <div class="neon-blue" id="title">Wel<span id="fade">come</span> To</div>
-                  <div class="neon-blue">  <span class="neon-purple" id="trav">Thea</span>  <span class="neon-purple">ter</span></div>
+            <div className="container">
+              <div className="sign">
+                  <div className="neon-blue" id="title">Wel<span id="fade">come</span> To</div>
+                  <div className="neon-blue">  <span className="neon-purple" id="trav">Thea</span>  <span className="neon-purple">ter</span></div>
               </div>
             </div>
             {movies.map(movie => (
@@ -64,6 +64,9 @@ class Home extends React.Component{
                 synopsis = {movie.synopsis}
                 rating = {movie.rating}
                 runtime = {movie.runtime}
+                trailer={movie.yt_trailer_code}
+                background={movie.background_image}
+                yt_trailer_code = {movie.yt_trailer_code}
               /> //여기서 Movie 컴포넌트 출력
             ))}
           </div>
