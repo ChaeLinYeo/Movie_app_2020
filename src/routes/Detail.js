@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Div = styled.div`
 width:100%;
-height:94vh;
+height:1920px;
 margin:auto;
 position:relative;
     iframe{
@@ -23,7 +23,7 @@ position:relative;
         height:auto;
         padding:30px;
         border-radius:10px;
-        top:56%;
+        top:25%;
         transform:translateX(-50%);
         left:50%;
         background:rgba(0,0,0,0.6);
@@ -39,8 +39,8 @@ position:relative;
             color:lightpink
         }
         h3{
-            font-size:30px;
-            color:gray
+            font-size:20px;
+            color:white
         }
     }
     @media only screen and (max-width:1200px) {
@@ -68,13 +68,15 @@ position:relative;
             h3{font-size:20px}
         }
     }
+
+    
 `
 
 class Detail extends React.Component{
     componentDidMount(){
         const{location, history}=this.props;
-        if (location.state == undefined){   //location.state가 없는 경우(카드를 누르지 않고 주소창에서 디테일로 이동할경우)
-            history.push("/");  //Home으로 이동시킴
+        if (location.state === undefined){   //location.state가 없는 경우(카드를 누르지 않고 주소창에서 디테일로 이동할경우)
+            history.push('/');  //Home으로 이동시킴
 
         }
     }
@@ -107,12 +109,24 @@ class Detail extends React.Component{
             // </span>
             <Div style={{background:`URL(${location.state.background})`,
                     backgroundRepeat:'no-repeat',
-                    backgroundSize:'cover'}}>
-                <iframe title={location.state.trailer} src={`https://www.youtube.com/embed/${location.state.trailer}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                    backgroundSize:'cover',
+                    }}>
+                
+                <iframe 
+                title={location.state.trailer} 
+                src={`https://www.youtube.com/embed/${location.state.trailer}`} 
+                frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen />
                 <div className='text'>
                     <h1>{location.state.title}</h1>
                     <h2>{location.state.year} {location.state.genres.map(i=>i)}</h2>
-                    <h3>{location.state.summary.slice(0,400)}</h3>
+                    <h3>Rating : {location.state.rating}/10</h3>
+                    <h3>Runtime : {location.state.runtime} mins</h3>
+                    <h3>{location.state.genres.map((genre, index) => {
+                            return <li key={index} className="movie__genre">{genre}</li>;
+                        })}</h3>
+                    <h2>Synopsis</h2>
+                    <h3>{location.state.synopsis}</h3>
                 </div>
             </Div>
             );
