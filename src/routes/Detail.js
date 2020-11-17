@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Div = styled.div`
 width:100%;
-height:1920px;
+height: 1924px;
 margin:auto;
 position:relative;
     iframe{
