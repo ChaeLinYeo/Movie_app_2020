@@ -5,6 +5,8 @@ function About(props){//라우팅 대상이 되는 컴포넌트에 넘겨주는 
     console.log(props);
     return (
         <div className="about__container">
+            <div id="front"></div>
+            <div id="back"></div>
             <span>
                 Developer : ChaelinYeo
                 <br></br>
