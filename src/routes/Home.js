@@ -240,6 +240,8 @@ class Home extends React.Component{
     const {isLoading, movies} = this.state;
     return (
       <section className="container">
+      <div id="front"></div>
+      <div id="back"></div>
       <div className="area" >
         
       </div >
