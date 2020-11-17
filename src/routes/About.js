@@ -12,8 +12,9 @@ function About(props){//라우팅 대상이 되는 컴포넌트에 넘겨주는 
                 <br></br>
                 blog : http://chaelinyeo.github.io/ 
                 <br></br>
-                github : http://chaelinyeo.github.io/
-                "About this page: I built it because I love movies."
+                github : https://github.com/ChaeLinYeo/
+                <br></br>
+                <h3>"About this page: I built it because I love movies."</h3>
             </span>
         </div>
     );
