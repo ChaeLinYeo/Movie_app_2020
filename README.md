@@ -1,11 +1,11 @@
 # Movie App 2020
 
 React JS Fundamentals Course 2020 <br>
-사용된 API : https://yts.mx/api#list_movies <br>
-API로부터 영화 평점순으로 데이터를 받아오는 반응형 웹/앱.<br>
-완성본 : https://chaelinyeo.github.io/movie_app_2020/#/ <br>
+used API : https://yts.mx/api#list_movies <br>
+Responsive web/app that receives data from API in order of movie rating.<br>
+Completed web site : https://chaelinyeo.github.io/movie_app_2020/#/ <br>
 <br>
-코드를 사용하기에 앞서, 설치해줘야 하는 것들
+Things you need to install before using the code : 
 ```
 npx create-react-app movie_app_2020
 npm install prop-types
@@ -14,11 +14,11 @@ npm install react-router-dom
 npm install styled-components --save
 npm install antd --save
 ```
-코드를 실행시키려면 다음을 입력하세요.
+To run the code, type :  
 ```
 npm start
 ```
-배포 방법
+How to deploy : 
 ```
 npm run deploy
 ```
